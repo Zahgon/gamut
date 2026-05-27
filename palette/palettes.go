@@ -20,11 +20,4 @@ var (
 )
 
 // AllPalettes returns a mix of all palettes defined in gamut
-func AllPalettes() gamut.Palette {
-	return Wikipedia.
-		MixedWith(Monokai).
-		MixedWith(Crayola).
-		MixedWith(Resene).
-		MixedWith(RAL).
-		MixedWith(CSS)
-}
+func AllPalettes() gamut.Palette { _ = "STUB: not implemented"; return *new(gamut.Palette) }

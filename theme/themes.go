@@ -1,8 +1,6 @@
 package theme
 
 import (
-	"image/color"
-
 	"github.com/muesli/gamut"
 	"github.com/muesli/gamut/palette"
 )
@@ -24,25 +22,13 @@ var (
 
 // Role returns the theme's color for a specific role
 func (t Theme) Role(r Role) gamut.Color {
-	return t.colors[r]
+	_ = "STUB: not implemented"
+
+	// Colors returns all (unique) colors used in this theme
+	return *new(gamut.Color)
 }
 
-// Colors returns all (unique) colors used in this theme
-func (t Theme) Colors() gamut.Colors {
-	cm := make(map[color.Color]gamut.Color)
-	for _, c := range t.colors {
-		if _, ok := cm[c.Color]; !ok {
-			cm[c.Color] = c
-		}
-	}
-
-	var cc gamut.Colors
-	for _, c := range cm {
-		cc = append(cc, c)
-	}
-
-	return cc
-}
+func (t Theme) Colors() gamut.Colors { _ = "STUB: not implemented"; return *new(gamut.Colors) }
 
 func init() {
 	MonokaiTheme.colors[Foreground] = palette.Monokai.Filter("Extra White")[0]

@@ -1,12 +1,8 @@
 package main
 
 import (
-	"bytes"
-	"fmt"
 	"image/color"
-	"io/ioutil"
 
-	colorful "github.com/lucasb-eyer/go-colorful"
 	"github.com/muesli/gamut"
 )
 
@@ -31,18 +27,7 @@ var (
 	`
 )
 
-func palette(name string, cc []color.Color) {
-	buffer := bytes.NewBuffer([]byte{})
-	buffer.Write([]byte(header))
-
-	for _, c := range cc {
-		col, _ := colorful.MakeColor(c)
-		buffer.Write([]byte(fmt.Sprintf(cell, col.Hex())))
-	}
-
-	buffer.Write([]byte(footer))
-	ioutil.WriteFile(fmt.Sprintf("palette_%s.html", name), buffer.Bytes(), 0644)
-}
+func palette(name string, cc []color.Color) { _ = "STUB: not implemented"; return }
 
 func main() {
 	// generators

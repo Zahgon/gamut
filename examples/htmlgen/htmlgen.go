@@ -1,13 +1,8 @@
 package htmlgen
 
 import (
-	"fmt"
 	"image/color"
 	"io"
-
-	"github.com/muesli/gamut"
-
-	colorful "github.com/lucasb-eyer/go-colorful"
 )
 
 var (
@@ -34,30 +29,13 @@ var (
 )
 
 // Header writes the HTML header to buffer
-func Header(buffer io.Writer) {
-	buffer.Write([]byte(header))
-}
+func Header(buffer io.Writer) { _ = "STUB: not implemented"; return }
 
 // Footer writes the HTML footer to buffer
-func Footer(buffer io.Writer) {
-	buffer.Write([]byte(footer))
-}
+func Footer(buffer io.Writer) { _ = "STUB: not implemented"; return }
 
 // Cell writes a colored HTML table cell to buffer
-func Cell(buffer io.Writer, c color.Color) {
-	col, _ := colorful.MakeColor(c)
-	comp, _ := colorful.MakeColor(gamut.Contrast(c))
-	buffer.Write([]byte(fmt.Sprintf(cell, col.Hex(), comp.Hex(), col.Hex())))
-}
+func Cell(buffer io.Writer, c color.Color) { _ = "STUB: not implemented"; return }
 
 // Table writes a palette of colors as an HTML table to buffer
-func Table(buffer io.Writer, name string, cc []color.Color) {
-	if name != "" {
-		buffer.Write([]byte(fmt.Sprintf(tablecaption, name)))
-	}
-	buffer.Write([]byte(tableheader))
-	for _, c := range cc {
-		Cell(buffer, c)
-	}
-	buffer.Write([]byte(tablefooter))
-}
+func Table(buffer io.Writer, name string, cc []color.Color) { _ = "STUB: not implemented"; return }
